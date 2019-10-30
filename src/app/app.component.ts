@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PostListItemComponent } from './post-list-item/post-list-item.component';
 
 @Component({
   selector: 'app-root',
@@ -6,27 +7,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  isAuth = false;
-  state = "Eteint !";
-  lastUpdate = new Promise((resolve, reject) => {
-    const date = new Date();
-    setTimeout(
-      () => {
-        resolve(date);
-      }, 2000
-    );
-  });
+  
+  posts = [
+    {
+      title: "Un petit coucou",
+      content: "Un petit coucou de ta tata qui passait par la !",
+      loveIts: -3
+    },
+    {
+      title: "J'ai oublié",
+      content: "J'ai oublié de te demander si tu viens avec nous à noël ? Ca nous ferait très plaisir !",
+      loveIts: 0
+    },
+    {
+      title: "Je nmflsdkfnez",
+      content: "Lorem ipsum solor abet not pasta cosi de la muerte qui tuea la compagna.",
+      loveIts: 0
+    }
+  ];
 
   constructor() {
-    setTimeout(
-      () => {
-        this.isAuth = true;
-      }, 4000
-    );
   }
 
-  onAllumer() {
-    this.state = "Allumé !";
-    this.isAuth = false;
-  }
 }

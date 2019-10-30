@@ -1,0 +1,17 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': getColorState(),
+                'list-group-item-danger': !getColorState()}">
+    <div class="row">
+        <div class="col-md-10">
+            <h3 class="list-group-item-heading">{{ title }}</h3>
+        </div>
+        <div class="col-md-2">
+            <small style="color: grey;">{{ createdAt | date:'short' }}</small>
+        </div>
+    </div>
+    <p class="list-group-item-text">{{ content }}</p><br>
+    <div class="btn-group" role="group">
+        <button class="btn btn-success" (click)="loveIt()">Love it ! <span class="glyphicon glyphicon-thumbs-up"></span></button>
+        <button class="btn btn-danger" (click)="dontLoveIt()">Don't love it ! <span class="glyphicon glyphicon-thumbs-down"></span></button>
+    </div>
+</li>
